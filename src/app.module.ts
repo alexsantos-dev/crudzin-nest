@@ -1,10 +1,13 @@
-import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { Module } from '@nestjs/common'
+import { SequelizeModule } from '@nestjs/sequelize'
+import { dataBaseConfig } from 'database/database.config'
+import { UserModule } from 'models/user/user.module'
 
 @Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppService],
+    imports: [
+        SequelizeModule.forRoot(dataBaseConfig),
+        UserModule
+    ]
 })
-export class AppModule {}
+
+export class AppModule { }
