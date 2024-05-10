@@ -1,4 +1,4 @@
-import { Model, Table, Column, DataType } from 'sequelize-typescript'
+import { Model, Table, Column, DataType, BelongsTo, ForeignKey } from 'sequelize-typescript'
 
 @Table({ timestamps: true })
 export class User extends Model<User> {
@@ -39,5 +39,4 @@ export class User extends Model<User> {
         }
     })
     password: string
-
 }
