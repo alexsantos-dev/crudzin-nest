@@ -75,7 +75,7 @@ export class UserController {
             if (!validUser) {
                 res.status(HttpStatus.NOT_FOUND).json({ err: 'User not found' })
             } else {
-                const userDeleted = await this.userService.deleteUser(id)
+                await this.userService.deleteUser(id)
                 return res.status(HttpStatus.NO_CONTENT).end()
             }
         } catch (error) {
